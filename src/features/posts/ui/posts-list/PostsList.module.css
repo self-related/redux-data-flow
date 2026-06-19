@@ -1,0 +1,57 @@
+.postsList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+}
+
+.post {
+    border: 1px solid rgba(255, 255, 255, 0.275);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 100%;
+        word-wrap: break-word;
+
+    & > h3 {        margin: 0;
+        padding-bottom: 1rem;
+    }
+
+    & > p {
+        margin: 0;
+    }
+}
+
+.postButtons {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-top: 0.5rem;
+
+    & button {
+        background-color: purple;
+        border: none;
+        border-radius: 2px;
+        color: white;
+        cursor: pointer;
+        padding: 0.2rem 0.5rem;
+        
+        &:hover {
+            background-color: rgb(171, 4, 171);
+        }
+        &:active {
+            background-color: rgb(96, 1, 96);
+        }
+    }
+}
+
+.removePostBtn {
+    background-color: rgb(220, 19, 19) !important;
+    color: white;
+
+    &:hover {
+        background-color: rgb(255, 60, 60) !important;
+    }
+    &:active {
+        background-color: rgb(107, 1, 1) !important;
+    }
+}

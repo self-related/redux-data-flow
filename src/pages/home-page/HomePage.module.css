@@ -1,0 +1,16 @@
+.homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+}
+
+.postsWrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    min-width: 300px;
+    max-width: 40rem;
+    width: 100%;
+}
