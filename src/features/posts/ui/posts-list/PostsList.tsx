@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "../../../../app/model/store";
-import { postRemoved, type Post } from "../../model/postsSlice";
+import { useAppSelector } from "../../../../app/model/store";
+import { Post } from "../post/Post";
 import styles from "./PostsList.module.css"
 
 
@@ -14,27 +14,5 @@ export default function PostsList() {
                 ))
             }
         </section>
-    );
-}
-
-
-type PostProps = {
-    index: number
-} & Post; // handle all Post fields from slice
-
-function Post({ title, content, index }: PostProps) {
-    const dispatch = useAppDispatch();
-    const handleRemovePost = () => dispatch(postRemoved(index));
-
-    return (
-        <article className={styles.post}>
-            <h3>{title}</h3>
-            <p>{content}</p>
-            <div className={styles.postButtons}>
-                <button onClick={handleRemovePost} className={styles.removePostBtn}>
-                    Remove
-                </button>
-            </div>
-        </article>
     );
 }

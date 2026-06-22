@@ -29,6 +29,11 @@
         text-align: center;
 
         overflow: hidden;
+
+        & a {
+            color: unset;
+            text-decoration: unset;
+        }
     }
 }
 
