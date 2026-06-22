@@ -1,11 +1,8 @@
+import { Outlet } from "react-router";
 import { DEFAULT_META } from "../../shared/metadata/defaults";
 import styles from "./Layout.module.css";
 
-interface LayoutProps {
-    children?: React.ReactNode | string
-}
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
 
     return (
         <div className={styles.layout}>
@@ -14,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
             </nav>
  
             <main className={styles.main}>
-                {children}
+                <Outlet />
             </main>
 
             <footer className={styles.footer}>
