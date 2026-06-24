@@ -57,8 +57,9 @@
     padding: 0.4rem 1rem;
 
     & p {
-        color: rgb(230, 223, 223);
-        font-size: 1rem;
+        color: rgb(214, 211, 211);
+        font-size: 0.9rem;
         margin: 0;
+        text-align: center;
     }
 }
