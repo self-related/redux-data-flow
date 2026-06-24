@@ -1,28 +1,73 @@
 import { Link } from "react-router";
 import { useAppDispatch } from "../../../../app/model/store";
-import { postRemoved, type Post } from "../../model/postsSlice";
+import { postRemoved, postUpdated, type Post } from "../../model/postsSlice";
 import styles from "./Post.module.css";
+import { useState } from "react";
 
-type PostProps = {
+interface PostProps extends Post {
     index: number,
     page?: boolean
-} & Post; // handle all Post fields from slice
+}
+
+interface EditForm extends HTMLFormElement {
+    newPostTitle: HTMLInputElement,
+    newPostContent: HTMLTextAreaElement,
+}
+
 
 export function Post({ title, content, index, page }: PostProps) {
-    const dispatch = useAppDispatch();
-    const handleRemovePost = () => dispatch(postRemoved(index));
-
     const pageClass = (page) ? styles.page : "";
 
-    return (
-        <article className={`${styles.post} ${pageClass}`}>
+    const [editMode, setEditMode] = useState(false);
+    const dispatch = useAppDispatch();
+
+    const handleRemovePost = () => dispatch(postRemoved(index));
+    const handleEditMode = () => setEditMode(val => !val);
+
+    const handleEditPostSubmit = (e: React.SubmitEvent<EditForm>) => {
+        e.preventDefault();
+        const {newPostTitle, newPostContent} = e.currentTarget;
+        
+        dispatch(postUpdated({index, title: newPostTitle.value, content: newPostContent.value,}));
+        setEditMode(val => !val); 
+    };
+
+
+    const PostWrap= (
+        <div className={styles.postWrap}>
             <h3>
                 <Link to={`/posts/${index}`}> 
                     {title}
                 </Link>
             </h3>
-            <p>{content}</p>
-            <div className={styles.postButtons}>
+            <p>{content}</p> 
+        </div>
+    );
+
+    const EditPostForm = (
+        <form onSubmit={handleEditPostSubmit} className={styles.editPostForm}>
+            <input type="text" defaultValue={title} id="newPostTitle" />
+            <textarea defaultValue={content} id="newPostContent" />
+
+            <div className={styles.buttonsWrap}>
+                <button>save</button>
+            </div>
+        </form>
+    );
+
+
+    return (
+        <article className={`${styles.post} ${pageClass}`}>
+            {
+                editMode 
+                ? EditPostForm 
+                : PostWrap
+            }
+            <div className={styles.buttonsWrap}>
+                <button onClick={handleEditMode}>
+                    Edit
+                </button>
+
                 <button onClick={handleRemovePost} className={styles.removePostBtn}>
                     Remove
                 </button>
