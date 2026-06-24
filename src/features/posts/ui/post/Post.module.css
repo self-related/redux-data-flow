@@ -114,3 +114,15 @@
         margin: 0;
     }
 }
+
+.cancelBtn {
+    background-color: #696767 !important;
+    color: white;
+
+    &:hover {
+        background-color: #797777 !important;
+    }
+    &:active {
+        background-color: #414141 !important;
+    }
+}

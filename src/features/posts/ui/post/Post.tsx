@@ -49,7 +49,13 @@ export function Post({ title, content, index, page }: PostProps) {
             <textarea defaultValue={content} id="newPostContent" />
 
             <div className={styles.buttonsWrap}>
-                <button>save</button>
+                <button type="submit">
+                    save
+                </button>
+                
+                <button onClick={() => setEditMode(false)} className={styles.cancelBtn}>
+                    cancel
+                </button>
             </div>
         </form>
     );
