@@ -22,7 +22,6 @@ export function Post({ title, content, index, page }: PostProps) {
     const dispatch = useAppDispatch();
 
     const handleRemovePost = () => dispatch(postRemoved(index));
-    const handleEditMode = () => setEditMode(val => !val);
 
     const handleEditPostSubmit = (e: React.SubmitEvent<EditForm>) => {
         e.preventDefault();
@@ -64,7 +63,7 @@ export function Post({ title, content, index, page }: PostProps) {
                 : PostWrap
             }
             <div className={styles.buttonsWrap}>
-                <button onClick={handleEditMode}>
+                <button onClick={() => setEditMode(true)}>
                     Edit
                 </button>
 
