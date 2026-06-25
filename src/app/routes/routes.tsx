@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import HomePage from "../../pages/home-page/HomePage";
-import PostPage from "../../pages/posts-page/PostsPage";
+import PostPage from "../../pages/post-page/PostPage";
 import Layout from "../layout/Layout";
 
 

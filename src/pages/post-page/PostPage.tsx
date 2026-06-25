@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { Post } from "../../features/posts/ui/post/Post";
-import styles from "./PostsPage.module.css";
+import styles from "./PostPage.module.css";
 import { useSelectPostByIndex } from "../../features/posts/model/postsSlice";
 import { useEffect } from "react";
 import { setMeta } from "../../shared/lib/seo";
