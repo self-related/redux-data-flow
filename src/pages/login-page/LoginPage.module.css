@@ -33,8 +33,10 @@
     }
     &:open {
         background-color: #454545;
+        color: #efefef !important; /* prevent color change for dropdown options when default value checked */
     }
 
+    /* change color for <select> when default value checked */
     &:has(option[value=""]:checked) {
         color: rgb(155, 155, 155);
     }
