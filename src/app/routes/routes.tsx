@@ -3,6 +3,7 @@ import HomePage from "../../pages/home-page/HomePage";
 import PostPage from "../../pages/post-page/PostPage";
 import Layout from "../layout/Layout";
 import LoginPage from "../../pages/login-page/LoginPage";
+import AuthRouter from "../../features/auth/routes/AuthRouter";
 
 
 export const router = createBrowserRouter(
@@ -11,13 +12,18 @@ export const router = createBrowserRouter(
             element: <Layout />,
             children: [
                 {
-                    index: true,
-                    element: <HomePage />,
-                },
+                    element: <AuthRouter />,
+                    children: [
+                        {
+                            index: true,
+                            element: <HomePage />,
+                        },
 
-                {
-                    path: "/posts/:postIndex",
-                    element: <PostPage />
+                        {
+                            path: "/posts/:postIndex",
+                            element: <PostPage />
+                        },
+                    ]
                 },
 
                 {
