@@ -8,7 +8,7 @@ export function setMeta({ title, description }: MetaOpts) {
         document.title = title;
     }
 
-    if (description) {
+    if (description != null) {
         const descElement = document.getElementById("page-description") as HTMLMetaElement;
         descElement.content = description;
     }
