@@ -1,0 +1,23 @@
+.button {
+    background-color: purple;
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+
+    padding: 0.2rem 0.5rem;
+
+    height: fit-content;
+    width: fit-content;
+
+    text-align: center;
+
+    &:hover {
+        background-color: rgb(171, 4, 171);
+    }
+    &:active {
+        background-color: rgb(96, 1, 96);
+    }
+}

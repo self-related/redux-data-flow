@@ -3,6 +3,7 @@ import { useAppDispatch } from "../../../../app/model/store";
 import { postRemoved, postUpdated, type Post } from "../../model/postsSlice";
 import styles from "./Post.module.css";
 import { useState } from "react";
+import Button from "../../../../shared/ui/Button";
 
 interface PostProps extends Post {
     index: number,
@@ -49,13 +50,13 @@ export function Post({ title, content, index, page }: PostProps) {
             <textarea defaultValue={content} id="newPostContent" />
 
             <div className={styles.buttonsWrap}>
-                <button type="submit">
+                <Button type="submit">
                     save
-                </button>
+                </Button>
                 
-                <button onClick={() => setEditMode(false)} className={styles.cancelBtn}>
+                <Button onClick={() => setEditMode(false)} className={styles.cancelBtn}>
                     cancel
-                </button>
+                </Button>
             </div>
         </form>
     );
@@ -69,13 +70,13 @@ export function Post({ title, content, index, page }: PostProps) {
                 : PostWrap
             }
             <div className={styles.buttonsWrap}>
-                <button onClick={() => setEditMode(true)}>
+                <Button onClick={() => setEditMode(true)}>
                     Edit
-                </button>
+                </Button>
 
-                <button onClick={handleRemovePost} className={styles.removePostBtn}>
+                <Button onClick={handleRemovePost} className={styles.removePostBtn}>
                     Remove
-                </button>
+                </Button>
             </div>
         </article>
     );

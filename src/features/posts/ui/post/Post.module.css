@@ -28,33 +28,21 @@
     justify-content: end;
     width: 100%;
     margin-top: 1rem;
-
-    & button {
-        background-color: purple;
-        border: none;
-        border-radius: 2px;
-        color: white;
-        cursor: pointer;
-        padding: 0.2rem 0.5rem;
-        
-        &:hover {
-            background-color: rgb(171, 4, 171);
-        }
-        &:active {
-            background-color: rgb(96, 1, 96);
-        }
+    
+    & * {
+        font-size: 0.9rem;
     }
 }
 
 .removePostBtn {
-    background-color: rgb(220, 19, 19) !important;
+    background-color: rgb(220, 19, 19);
     color: white;
 
     &:hover {
-        background-color: rgb(255, 60, 60) !important;
+        background-color: rgb(255, 60, 60);
     }
     &:active {
-        background-color: rgb(107, 1, 1) !important;
+        background-color: rgb(107, 1, 1);
     }
 }
 

@@ -1,4 +1,5 @@
 import { useAppDispatch } from "../../../../app/model/store";
+import Button from "../../../../shared/ui/Button";
 import { postAdded } from "../../model/postsSlice";
 import styles from "./AddPostForm.module.css";
 
@@ -35,9 +36,8 @@ export default function AddPostForm() {
                 <textarea id="postContent" />
 
                 <div className={styles.submitBtnWrap}>
-                    <button type="submit">Add</button>
+                    <Button type="submit">Add</Button>
                 </div>
-
             </form>
         </section>
     );

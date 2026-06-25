@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { useSelectAllUsers } from "../../features/users/model/usersSlice";
 import styles from "./LoginPage.module.css";
 import { useRef } from "react";
+import Button from "../../shared/ui/Button";
 
 
 export default function LoginPage() {
@@ -28,10 +29,10 @@ export default function LoginPage() {
                 }
 
             </select>
-            
-            <button className={styles.loginBtn} onClick={handleLogin}>
+
+            <Button onClick={handleLogin}>
                 Login
-            </button>
+            </Button>
         </div>
     );
 }
