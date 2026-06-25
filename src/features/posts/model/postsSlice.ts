@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { useAppSelector } from "../../../app/model/store";
 
 export interface Post {
     title: string,
@@ -29,4 +30,8 @@ export const postsSlice = createSlice({
 });
 
 
-export const {postAdded, postRemoved, postUpdated} = postsSlice.actions;
+export const { postAdded, postRemoved, postUpdated } = postsSlice.actions;
+
+// selector hooks
+export const useSelectPosts = () => useAppSelector(rootState => rootState.posts);
+export const useSelectPostByIndex = (index: number) => useAppSelector(rootState => rootState.posts[index]);

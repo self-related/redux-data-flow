@@ -1,10 +1,10 @@
-import { useAppSelector } from "../../../../app/model/store";
+import { useSelectPosts } from "../../model/postsSlice";
 import { Post } from "../post/Post";
 import styles from "./PostsList.module.css"
 
 
 export default function PostsList() {
-    const posts = useAppSelector(({posts}) => posts);
+    const posts = useSelectPosts();
 
     return (
         <section className={styles.postsList}>

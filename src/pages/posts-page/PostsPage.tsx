@@ -1,12 +1,12 @@
 import { useParams } from "react-router";
-import { useAppSelector } from "../../app/model/store";
 import { Post } from "../../features/posts/ui/post/Post";
 import styles from "./PostsPage.module.css";
+import { useSelectPostByIndex } from "../../features/posts/model/postsSlice";
 
 
 export default function PostPage() {
    const postIndex = Number(useParams().postIndex); 
-   const post = useAppSelector(state => state.posts.find((_, index) => index === postIndex));
+   const post = useSelectPostByIndex(postIndex);
    
    if (!post) {
     return (
