@@ -1,0 +1,60 @@
+.loginPage {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    row-gap: 1rem;
+
+    height: 100%;
+    width: 100%;
+}
+
+.userSelect {
+    height: 2rem;
+    min-width: 12rem;
+    width: fit-content;
+
+    color: #efefef;
+    font-size: 1rem;
+    text-align: center;
+
+    background-color: #454545;
+    border: none;
+    border-radius: 15px;
+
+    appearance: none;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #656565;
+    }
+    &:open {
+        background-color: #454545;
+    }
+
+    &:has(option[value=""]:checked) {
+        color: rgb(155, 155, 155);
+    }
+}
+
+.loginBtn {
+    background-color: purple;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+
+    padding: 0.2rem 0.5rem;
+
+    &:hover {
+        background-color: rgb(171, 4, 171);
+    }
+    &:active {
+        background-color: rgb(96, 1, 96);
+    }
+}
+
