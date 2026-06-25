@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { useAppSelector } from "../../../app/model/store";
 
 
-interface User {
+export interface User {
     id: string,
     name: string
 }

@@ -3,16 +3,23 @@ import { useSelectAllUsers } from "../../features/users/model/usersSlice";
 import styles from "./LoginPage.module.css";
 import { useRef } from "react";
 import Button from "../../shared/ui/Button";
+import { userLoggedIn } from "../../features/auth/model/authSlice";
+import { useAppDispatch } from "../../app/model/store";
 
 
 export default function LoginPage() {
-    const users = useSelectAllUsers();
     const navigate = useNavigate();
-
+    const dispatch = useAppDispatch();
+    const users = useSelectAllUsers();
     const userSelectElement = useRef<HTMLSelectElement>(null);
 
     const handleLogin = () => {
-        if (!userSelectElement.current?.value) return;
+        const userId = Number(userSelectElement.current?.value);
+        const user = users[userId]
+
+        if (!user) return;
+        
+        dispatch(userLoggedIn(user));
         navigate("/");
     };
 
