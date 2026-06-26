@@ -38,7 +38,7 @@ export default function Panel() {
             <section className={userSectionModifier}>
                 <div className={styles.userSectionFull}>
                     <p>{currentUser?.name}</p>
-                    <Button onClick={handleUserLogOut}>
+                    <Button onClick={handleUserLogOut} className={styles.logoutBtnFull}>
                         Logout
                     </Button>
                 </div>
