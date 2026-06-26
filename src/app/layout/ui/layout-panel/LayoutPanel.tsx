@@ -4,12 +4,16 @@ import { DEFAULT_META } from "../../../../shared/metadata/defaults";
 import { useAppDispatch } from "../../../model/store";
 import styles from "./LayoutPanel.module.css";
 import Button from "../../../../shared/ui/Button";
+import { useState } from "react";
 
 
 
 export default function Panel() {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    
     const currentUser = useSelectCurrentUser();
     const userSectionModifier = (currentUser) ? "" : styles.hidden; // hide if no current user
+    const dropdownModifier = (dropdownOpen) ? styles.dropdownOpen : "";
 
     const dispatch = useAppDispatch();
 
@@ -40,9 +44,14 @@ export default function Panel() {
                 </div>
 
                 <div className={styles.userSectionShort}>
-                    <button>
+                    <button onClick={() => setDropdownOpen(val => !val)}>
                         <p>|||</p>
                     </button>
+
+                    <div className={`${styles.dropdown} ${dropdownModifier}`}>
+                        <p>User: {currentUser?.name}</p>
+                        <Button onClick={handleUserLogOut}>Logout</Button>
+                    </div>
                 </div>
             </section>
         </nav>

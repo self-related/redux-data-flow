@@ -51,11 +51,13 @@
     }
 }
 
-.userSectionShort {   
-    display: none;
+.userSectionShort {
     position: relative;
 
+    display: flex; /* when visible */
+    display: none; /* default */
     justify-content: end;
+
     width: 100%;
     height: 100%;
 
@@ -90,4 +92,39 @@
     .userSectionShort {
         display: flex;
     }
+}
+
+.dropdown {
+    position: absolute;
+
+    top: 100%;
+    right: 0;
+
+    display: flex; /* when open */ 
+    display: none; /* default*/
+
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    row-gap: 1rem;
+
+    padding: 1rem;
+
+    border: 1px solid #ffffff6a;
+
+    & > p {
+        margin: 0;
+        min-width: max-content;
+        width: 8rem;
+    }
+
+    & > button {
+        width: 100%;
+    }
+    
+}
+
+.dropdownOpen {
+    display: flex;
 }
