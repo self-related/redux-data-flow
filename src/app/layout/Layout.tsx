@@ -1,19 +1,14 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
 import { DEFAULT_META } from "../../shared/metadata/defaults";
 import styles from "./Layout.module.css";
+import LayoutPanel from "./ui/layout-panel/LayoutPanel";
 
 export default function Layout() {
 
     return (
         <div className={styles.layout}>
-            <nav className={styles.navbar}>
-                <h1>
-                    <Link to="/">
-                        {DEFAULT_META.title}
-                    </Link>
-                </h1>
-            </nav>
- 
+            <LayoutPanel />
+            
             <main className={styles.main}>
                 <Outlet />
             </main>

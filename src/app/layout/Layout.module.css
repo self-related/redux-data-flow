@@ -11,31 +11,6 @@
 
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: purple;
-
-    min-height: 3rem;
-    width: 100%;
-
-
-    & > h1 {
-        align-content: center;
-        font-size: 1.9rem;
-        margin: 0;
-        text-align: center;
-
-        overflow: hidden;
-
-        & a {
-            color: unset;
-            text-decoration: unset;
-        }
-    }
-}
 
 .main {
     flex-grow: 1;
