@@ -103,6 +103,7 @@
 
 .dropdown {
     position: absolute;
+    background-color: #252525;
 
     top: 100%;
     right: 0;
