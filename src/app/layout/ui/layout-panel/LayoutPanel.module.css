@@ -66,7 +66,9 @@
     width: 100%;
     height: 100%;
 
-    & > button {
+}
+
+.menuBtn {
         border: none;
         height: 100%;
         width: 2rem;
@@ -87,8 +89,8 @@
             font-size: 1rem;
             transform: rotate(90deg);
         }
-    }
 }
+
 
 @media (width < 600px) {
     .userSectionFull {
@@ -132,4 +134,12 @@
 
 .dropdownOpen {
     display: flex;
+}
+
+.dropdownOpen_menuBtn {
+    background-color: #420042 !important;
+
+    & > p {
+        transform: unset !important;
+    }
 }

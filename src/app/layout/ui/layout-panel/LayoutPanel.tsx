@@ -12,8 +12,11 @@ export default function Panel() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     
     const currentUser = useSelectCurrentUser();
+
+    // css modifiers
     const userSectionModifier = (currentUser) ? "" : styles.hidden; // hide if no current user
-    const dropdownModifier = (dropdownOpen) ? styles.dropdownOpen : "";
+    const dropdownModifier = (dropdownOpen) ? styles.dropdownOpen : ""; // display dropdown menu
+    const menuBtnModifier = (dropdownOpen) ? styles.dropdownOpen_menuBtn : ""; // decorate menu btn when dropdown open
 
     const dispatch = useAppDispatch();
 
@@ -44,13 +47,15 @@ export default function Panel() {
                 </div>
 
                 <div className={styles.userSectionShort}>
-                    <button onClick={() => setDropdownOpen(val => !val)}>
+                    <button onClick={() => setDropdownOpen(val => !val)} className={`${styles.menuBtn} ${menuBtnModifier}`}>
                         <p>|||</p>
                     </button>
 
                     <div className={`${styles.dropdown} ${dropdownModifier}`}>
                         <p>User: {currentUser?.name}</p>
-                        <Button onClick={handleUserLogOut}>Logout</Button>
+                        <Button onClick={handleUserLogOut}>
+                            Logout
+                        </Button>
                     </div>
                 </div>
             </section>
